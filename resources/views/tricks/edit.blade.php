@@ -45,7 +45,6 @@
 
 @section('scripts')
 <script type="text/javascript" src="{{ asset('js/vendor/selectize/js/standalone/selectize.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/trick-new-edit.min.js') }}"></script>
     <script src="{{ asset('js/prism.js')}}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/ace.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/theme-github.js') }}"></script>
@@ -53,89 +52,7 @@
     <script src="{{ asset('js/vendor/ace/src-min/ext-language_tools.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/snippets/php.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/marked.min.js') }}"></script>
-    <script>
-      $(function(){
-        ace.require("ace/ext/language_tools");
-        var editor = ace.edit("content");
-        var textarea = $('#input').hide();
-        var preview = $('#output');
-        var phpMode = ace.require("ace/mode/php").Mode;
-
-        editor.setTheme("ace/theme/github");
-        editor.getSession().setMode(new phpMode());
-        editor.getSession().setValue(textarea.val());
-        editor.setOptions({
-          enableBasicAutocompletion: true,
-          enableSnippets: true,
-          enableLiveAutocompletion: false
-        });
-
-        var cachedContent = localStorage.content || '';
-        var cachedTitle = localStorage.title || '';
-
-        if (cachedContent.length > 0) {
-          editor.getSession().setValue(cachedContent);
-        };
-
-        if (cachedTitle) {
-          $('[name=title]').val(cachedTitle);
-        };
-
-        $('[name=title]').on('change', function(){
-          localStorage.title = $(this).val();
-        });
-
-        editor.getSession().on('change', function(){
-          var content = editor.getSession().getValue();
-          textarea.val(content);
-          textarea.change();
-          preview.html(marked(content));
-          localStorage.content=content;
-        });
-
-        function update() {
-            var shouldShow = !editor.session.getValue().length;
-            var node = editor.renderer.emptyMessageNode;
-
-            if (!shouldShow && node) {
-                editor.renderer.scroller.removeChild(editor.renderer.emptyMessageNode);
-                editor.renderer.emptyMessageNode = null;
-            } else if (shouldShow && !node) {
-                node = editor.renderer.emptyMessageNode = document.createElement("div");
-                node.textContent = "请使用markdown格式编写"
-                node.className = "ace_invisible ace_emptyMessage"
-                node.style.padding = "0 9px"
-                editor.renderer.scroller.appendChild(node);
-            }
-        }
-        update();
-        editor.on("input", update);
-
-        $('form').on('submit', function(){
-          localStorage.content = '';
-          localStorage.title = '';
-        });
-
-        // tabs
-        $('.nav-tabs a').click(function (e) {
-          e.preventDefault()
-          $(this).tab('show');
-          if ($(this).attr('href') == '#output-wrapper') {
-            Prism.highlightAll();
-          };
-        });
-
-        //sync scroll
-        $('#input').scroll(function(event) {
-          var $input = $(this);
-          var $output = $('#output');
-
-          var $scale = $input.scrollTop() / ($input.get(0).scrollHeight - $input.get(0).offsetHeight);
-
-          $output.scrollTop(parseInt(($output.get(0).scrollHeight - $output.get(0).offsetHeight) * $scale));
-        });
-      })
-    </script>
+    <script type="text/javascript" src="{{ asset('js/trick-new-edit.min.js') }}"></script>
 @stop
 
 
