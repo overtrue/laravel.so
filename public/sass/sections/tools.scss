@@ -1,0 +1,143 @@
+// 工具类集
+// 位置 & 尺寸
+.full-height {
+    height:100%;
+}
+
+// 文本
+.text-deep-light {
+    color: $text-deep-light-color;
+}
+
+.text-light {
+    color: $text-light-color;
+}
+
+.text-muted {
+  font-weight:blod;
+  color: #bbb;
+  font-size:small;
+}
+.line-height-sm {
+    line-height: 30px;
+}
+
+// icon
+.icon-md {
+    font-size:18px;
+    line-height:16px;
+}
+
+.icon-lg {
+    font-size:30px;
+    line-height:40px;
+}
+
+.icon-xlg {
+    font-size:50px;
+    line-height:50px;
+}
+
+// Blankslate
+
+.blankslate {
+    position: relative;
+    padding: 30px;
+    text-align: center;
+    .boxed {
+        border: 1px solid #e5e5e5;
+        background-color: #fafafa;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+    .thin {
+        padding: 15px;
+    }
+}
+
+.blankslate.clean-background {
+    background: none;
+    border: 0;
+    box-shadow: none
+}
+
+.blankslate.capped {
+    border-radius: 0 0 3px 3px
+}
+
+.blankslate.spacious {
+    padding: 100px 60px 120px
+}
+
+.blankslate.has-fixed-width {
+    width: 485px;
+    margin: 0 auto
+}
+
+.blankslate.large-format h3 {
+    margin: 0.75em 0;
+    font-size: 20px
+}
+
+.blankslate.large-format p {
+    font-size: 16px
+}
+
+.blankslate.large-format p.has-fixed-width {
+    width: 540px;
+    margin: 0 auto;
+    text-align: left
+}
+
+.blankslate.large-format .mega-octicon {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: #aaa
+}
+
+.blankslate.large-format .octicon-inbox {
+    font-size: 48px;
+    line-height: 40px
+}
+
+.blankslate code {
+    padding: 2px 5px 3px;
+    font-size: 14px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px
+}
+
+.blankslate>.mega-octicon {
+    color: #aaa
+}
+
+.blankslate .mega-octicon+.mega-octicon {
+    margin-left: 10px
+}
+
+.tabnav+.blankslate {
+    margin-top: 20px
+}
+
+.blankslate .context-loader.large-format-loader {
+    padding-top: 50px
+}
+
+// resizeable
+// 用于触发窗口变化事件
+.resizeable {
+   -moz-transition:width 2.01s, height 2.01s;
+   -webkit-transition:width 2.01s, height 2.01s;
+   -o-transition:width 2.01s, height 2.01s;
+   transition:width 2.01s, height 2.01s;
+}
+
+// panel
+
+.panel-heading.with-md-button {
+    line-height: 36px;
+    h3 {
+        line-height: 36px;
+    }
+}

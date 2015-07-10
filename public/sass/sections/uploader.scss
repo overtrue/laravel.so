@@ -1,0 +1,37 @@
+#uploader-upload-container {
+    position: absolute;
+    z-index: 999;
+    padding:10px;
+    border: 1px solid #ccc;
+    background:#fff;
+    width:500px;
+    display:none;
+
+    .uploader-file-item {
+        padding: 8px;
+        display: flex;
+        width:100%;
+        vertical-align: middle;
+
+        div {
+            display:inline-flex;
+            &.uploader-filename {
+                width:40%;
+                span {
+                    text-overflow:ellipsis;
+                    overflow:hidden;
+                    display:block;
+                    white-space: nowrap;
+                }
+            }
+            &.uploader-upload-progress {
+                width:60%;
+                .uploader-upload-progress-bar {
+                    background: rgb(3, 169, 94);
+                    width:0;
+                    height:10px;
+                }
+            }
+        }
+    }
+}

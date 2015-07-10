@@ -1,0 +1,61 @@
+// 全局头部样式
+
+.console-header {
+    height: $header-height + 4;
+    width: 100%;
+    position:fixed;
+    z-index:100;
+    background: #fff;
+    top:0;
+    left:0;
+    width: 100%;
+    border-bottom: 1px solid #d9dadc;
+    border-top: 4px solid $brand-success;
+
+    .header-inner {
+        width:100%;
+    }
+
+    .left {
+        width: $sidebar-width;
+        height:100%;
+        overflow:hidden;
+
+        .logo {
+            height:$header-height;
+            line-height: $header-height;
+            border-right: $light-border-color;
+
+            a {
+                h1 {
+                    font-size: 20px;
+                    margin: 0;
+                    line-height: 60px;
+                }
+            }
+        }
+    }
+
+    .right {
+        height:100%;
+        &.table-cell {
+            overflow:visible !important;
+        }
+        .top-nav {
+            width:100%;
+
+            > ul > li {
+                > a {
+                    height: $header-height;
+                    line-height: $header-height;
+                    padding:0 15px;
+                }
+                &.active a {
+                    color: #fff;
+                    background: $brand-success;
+                }
+            }
+    }
+    }
+}
+

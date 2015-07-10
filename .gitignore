@@ -1,0 +1,12 @@
+_Store
+.phpintel/
+*storage/
+composer.lock
+.DS_Store
+public/.htaccess
+*/node_modules
+public/.sass-cache/
+vendor/
+.env
+*/.sass-cache
+.php_cs.cache

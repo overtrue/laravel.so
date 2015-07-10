@@ -1,0 +1,56 @@
+// 布局样式
+.console-wrapper {
+    overflow: auto;
+    height: 100%;
+    width:100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 36px;
+    border:1px solid $border-color;
+}
+.console-container {
+    border: 1px solid #d9dadc;
+    background:#fff;
+}
+
+.console-sidebar-wrapper {
+    width: $sidebar-width;
+    display: table-cell;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.console-content-wrapper {
+    display: table-cell;
+    position: relative;
+    vertical-align: top;
+
+    .console-content {
+
+    }
+}
+
+.console-footer {
+    background: #ebeef0;
+    color: #a2acb3;
+    padding: 10px 20px;
+
+    .back-to-top {
+        position:fixed;
+        right:10px;
+        bottom:10px;
+        padding:4px 15px;
+        border:none;
+        background:rgba(0,0,0,.6);
+        color: #eee;
+        font-size:20px;
+        outline:none;
+        transition: all 0.5s;
+
+        &:hover {
+            background:rgba(0,0,0,.8);
+            color: #fff;
+        }
+    }
+}

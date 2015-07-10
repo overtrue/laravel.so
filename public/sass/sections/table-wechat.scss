@@ -1,0 +1,36 @@
+table {
+    &.table-wechat
+    {
+        width: 100%;
+        font-size: 14px;
+        background-color: #fff;
+        text-align: center;
+        border-top: 1px solid #e7e7eb;
+        border-bottom: 1px solid #e7e7eb;
+        border-left: 1px solid #e7e7eb;
+        border-right: 1px solid #e7e7eb;
+        border-spacing: 2px;
+    }
+
+    thead {
+        background-color: #f4f5f9;
+
+        th {
+            padding:5px;
+            text-align: center;
+            border-bottom: 1px solid #e7e7eb;
+        }
+    }
+
+    .empty-tips
+    {
+        display:block;
+        line-height:200px;
+        text-align: center;
+        font-size: 14px;
+        color: #8d8d8d;
+        a{
+            color:#459ae9;
+        }
+    }
+}

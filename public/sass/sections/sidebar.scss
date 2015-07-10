@@ -1,0 +1,61 @@
+
+// 边栏样式
+
+#sidebar-nav {
+    margin-top:-1px;
+    border-right:1px solid $light-border-color;
+    height: 100%;
+
+    > ul > li {
+        border-top:1px solid $light-border-color;
+        padding:5px 0;
+        padding: 10px 0;
+    }
+
+    ul {
+        padding:0;
+        margin:0;
+        list-style:none;
+
+        li {
+            &.separator {
+                text-transform: none;
+                display: block;
+                padding: 7px 16px;
+                font-size: 11px;
+                border-bottom: 0;
+                color: #aaa;
+            }
+
+            a {
+                color: #222;
+                text-transform: uppercase;
+                display: block;
+                padding: 5px 20px 5px 18px;
+                position: relative;
+
+                &:hover {
+                    background: #f4f5f9;
+                }
+
+                &.active {
+                    color: #fff;
+                    background:$brand-success;
+                }
+
+                i {
+                    padding: 0 20px;
+                    font-size: 18px;
+                }
+            }
+
+            ul {
+                li {
+                    a {
+                        padding: 10px 20px 10px 75px;
+                    }
+                }
+            }
+        }
+    }
+}

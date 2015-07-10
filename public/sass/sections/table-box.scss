@@ -1,0 +1,30 @@
+
+// 表格布局
+.table-box {
+    display: table;
+    width: 100%;
+
+    &.inline-table {
+        width:auto;
+    }
+
+    > div, .table-row {
+        display: table-row;
+
+        .table-head {
+            text-align:center;
+        }
+
+        > div, .table-cell {
+            display: table-cell;
+            overflow: hidden;
+            vertical-align: top;
+        }
+    }
+}
+
+.table-box.table-padded {
+    .table-cell {
+        padding:10px;
+    }
+}

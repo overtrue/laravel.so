@@ -1,0 +1,44 @@
+
+// 内容页面大标题样式
+
+.page-header {
+    margin-top:10px;
+    margin-bottom:10px;
+    h2{
+      font-size: 24px;
+      padding:20px 30px 0;
+      line-height:45px;
+      margin-top:0;
+      margin-bottom:0;
+      letter-spacing:1px;
+    }
+    .navbar-nav {
+        line-height:40px;
+        .active {
+            background: #fff;
+            border-bottom: 3px solid #44b549;
+        }
+
+        li {
+            margin-bottom: -1px;
+        }
+
+        li:hover {
+            background: #fff;
+            border-bottom: 3px solid #a0a3b0;
+        }
+
+        a:hover,a:focus {
+            background:0;
+        }
+
+        a {
+            padding: 0 22px;
+            display: block;
+            text-decoration: none;
+            color: #222;
+            outline: 0;
+            line-height: 40px;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+// 登录页CSS
+@import "config.scss";
+
+.container {
+    position:relative;
+}
+
+#form-wrapper {
+
+    .form {
+        width: 340px;
+        position:absolute;
+        top:40%;
+        right: 10%;
+        margin-top: -193px;
+        background: rgba(255,255,255, .85);
+        padding:15px 30px 20px;
+        box-shadow: 0 1px 20px rgba(102, 102, 102, 0.75);
+
+        .page-header {
+            border-color: #ccc;
+            .h2 {
+                font-size:20px;
+            }
+        }
+
+        .input-group-addon {
+            font-size:20px;
+        }
+    }
+}
+
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #211f1f;
+    z-index:0;
+
+    .img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        -webkit-background-size: cover !important;
+        -moz-background-size: cover !important;
+        -o-background-size: cover !important;
+        background-size: cover !important;
+        opacity:.5;
+
+        &.img1{ background-image: url('../img/bg1.jpg')}
+        &.img2{ background-image: url('../img/bg2.jpg')}
+    }
+}
