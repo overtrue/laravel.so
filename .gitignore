@@ -8,5 +8,6 @@ public/.htaccess
 public/.sass-cache/
 vendor/
 .env
+.env.pro
 */.sass-cache
 .php_cs.cache
