@@ -4,10 +4,6 @@
 
 @section('description', $trick->pageDescription)
 
-@section('styles')
-    <link rel="stylesheet" href="{{ asset('css/prism.css') }}">
-@stop
-
 @section('scripts')
     <script src="{{ asset('js/prism.js')}}" data-default-language="php"></script>
     <script type="text/javascript" src="{{ asset('js/marked.min.js') }}"></script>
@@ -55,7 +51,7 @@
                                 {{ $trick->title }}
                             </h1>
                             <div>
-                                {{ trans('tricks.author') }} <b><a href="{{ route('user.profile', $trick->user->username) }}">{{ $trick->user->username }}</a></b> - {{ $trick->timeago }}
+                                {{ trans('tricks.author') }} <a href="{{ route('user.profile', $trick->user->username) }}">{{ $trick->user->username }}</a> - {{ $trick->timeago }}
                             </div>
                         </div>
                     </div>
@@ -65,7 +61,7 @@
             </div>
                 <div class="col-lg-3 col-md-4">
                     <div class="content-box">
-                        <b>{{ trans('tricks.stats') }}</b>
+                        <h5>{{ trans('tricks.stats') }}</h5>
                         <ul class="nav nav-list push-down list-group trick-stats">
                             <li class="list-group-item">
                                 <a href="#" class="js-like-trick" data-liked="{{ $trick->likedByUser(Auth::user()) ? '1' : '0'}}">
@@ -90,7 +86,7 @@
                             </li>
                         </ul>
                         @if(count($trick->allCategories))
-                            <b>{{ trans('tricks.categories') }}</b>
+                        <h5>{{ trans('tricks.categories') }}</h5>
                             <ul class="nav nav-list push-down">
                                 @foreach($trick->allCategories as $category)
                                     <li>
@@ -102,7 +98,7 @@
                             </ul>
                         @endif
                         @if(count($trick->tags))
-                            <b>{{ trans('tricks.tags') }}</b>
+                        <h5>{{ trans('tricks.tags') }}</h5>
                             <ul class="nav nav-list push-down">
                                 @foreach($trick->tags as $tag)
                                     <li>

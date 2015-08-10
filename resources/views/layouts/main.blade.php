@@ -13,9 +13,11 @@
         <meta property="og:image" content="" />
         <meta property="og:site_name" content="" />
         <meta property="og:description" content="@yield('description')" />
+        <meta name="keywords" content="@yield('keywords', trans('layouts.meta_keywords'))">
         <meta name="description" content="@yield('description')">
         <meta name="author" content="{{ trans('layouts.meta_author') }}">
         <meta name="google-site-verification" content="e2Aj3BCstJLN5LImLRFGVMC0CiDz0FpLL05xDvrOEdw" />
+        <meta name="baidu_union_verify" content="a18b9ce01c21e05e1c6da22902081f79">
         <title> @yield('title') | {{ trim(trans('layouts.site_title')) }} </title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -45,6 +47,7 @@
         ga('send', 'pageview');
 
         </script>
+
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         @yield('scripts')
@@ -74,5 +77,15 @@
 
             });
         </script>
+        <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?c991c4719704e5daa62d276d3ca04136";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+
     </body>
 </html>

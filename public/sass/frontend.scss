@@ -32,6 +32,17 @@ h3.content-title {
     margin-bottom: 20px;
 }
 
+pre[class*="language-"] {
+    padding: 1em;
+    margin: 10px 0 20px;
+    overflow: auto;
+}
+
+p {
+    line-height: 1.5;
+    margin: 10px 0 20px;
+}
+
 .login-form .form-control,
 .register-form .form-control{
     font-size: 16px;
@@ -56,7 +67,6 @@ h3.content-title {
 
 .btn-primary.btn-login {
     margin-top: 30px !important;
-    font-weight: bold;
     font-size: 16px;
     border-color: #FB503B;
     background:#fff;
@@ -70,7 +80,6 @@ h3.content-title {
     color: white;
 }
 .btn-default.btn-login-github{
-    font-weight: bold;
 }
 
 .content-box h1.page-title {
@@ -84,7 +93,6 @@ h2.title-between {
     margin: 10px 0 10px 0;
     text-align: left;
     color: #33383A;
-    font-weight: bold;
     font-size: 20px;
 }
 
@@ -113,7 +121,7 @@ h2.title-between {
     left: 0;
     margin-top: -25px;
     width: 50px;
-    border:1px solid #999;
+    border:1px solid rgba(153, 153, 153, 0.18);
     border-radius: 50%;
 }
 
@@ -122,7 +130,6 @@ h2.title-between {
 .trick-user h1.page-title {
     margin-bottom: 0;
     font-size: 20px;
-    font-weight: bold;
     line-height: 1.6;
 }
 .trick-user {
@@ -148,7 +155,7 @@ h2.title-between {
 
 }
 
-.navbar a, .navbar button, .navbar .icon-bar, .tag, .btn-login {
+.navbar a, .navbar button, .navbar .icon-bar, a.tag, .btn-login {
     -webkit-transition: color, border-color, background-color .2s ease-in-out;
     -moz-transition: color, border-color, background-color .2s ease-in-out;
     -ms-transition: color, border-color, background-color .2s ease-in-out;
@@ -204,7 +211,6 @@ h2.title-between {
 .navbar-default .navbar-nav li.active a,
 .navbar-default .navbar-nav li.active a:hover {
     background-color: #FB503B;
-    font-weight: bold;
     opacity: 1;
 }
 
@@ -218,7 +224,6 @@ h2.title-between {
 
 .trick-card-title {
     display: block;
-    font-weight: bold;
     color: #33383A;
     font-size: 20px;
     padding: 20px;
@@ -265,18 +270,17 @@ h2.title-between {
     padding-top:0;
 }
 
-.tag {
+a.tag {
     float: left;
     display: block;
     border: #FB503B 1px solid;
     color: #FB503B;
-    font-weight: bold;
     padding: 1px 5px;
 }
 
-.tag + .tag { margin-left: 5px; }
+a.tag + a.tag { margin-left: 5px; }
 
-.tag:hover {
+a.tag:hover {
     text-decoration: none;
     border-color: none;
     color: white;
@@ -304,6 +308,7 @@ h2.title-between {
 .trick-card-title a:hover,
 .trick-card-inner:hover .fa {
     color: #FB503B;
+    text-decoration: none;
 }
 
 .push-down {
@@ -370,7 +375,6 @@ h2.title-between {
 .navbar-default .btn-primary {
     font-size: 14px;
     text-transform: uppercase;
-    font-weight: bold;
     margin: 33px 0;
     background-color: transparent;
 }

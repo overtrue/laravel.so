@@ -3,7 +3,7 @@
 return array(
     'title' => 'Laravel技巧',
     'link' => 'http://www.laravel.so',
-    'sub_title' => 'Laravel.so 是一个网站，汇集了 Laravel 框架有用的技巧和窍门。',
+    'sub_title' => 'Laravel.so 是一个汇集了 PHP 框架 Laravel 有用的技巧和窍门的网站。',
     'author' => '
         <author>
         <name>overtrue</name>

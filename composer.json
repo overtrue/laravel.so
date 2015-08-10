@@ -17,7 +17,8 @@
         "illuminate/html": "^5.0@dev",
         "mccool/laravel-auto-presenter": "^4.0@dev",
         "overtrue/laravel-pinyin": "dev-master",
-        "guzzlehttp/guzzle": "^6.0@dev"
+        "guzzlehttp/guzzle": "^6.0@dev",
+        "hashids/hashids": "^1.0@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

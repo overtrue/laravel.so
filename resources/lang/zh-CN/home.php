@@ -37,7 +37,7 @@ return array(
     'share_facebook' => '分享到 Facebook',
     'facebook_text' => 'Useful Tips and Tricks for Laravel PHP framework.',
     'about_what_is_this' => '<h2>What is this</h2>
-        <p>Laravel Tricks was created to help <a href="http://laravel.com" target="_blank">Laravel</a> community find and share interesting ways of using <a href="http://laravel.com" target="_blank">Laravel</a> framework</p>
+        <p>Laravel.so was created to help <a href="http://laravel.com" target="_blank">Laravel</a> community find and share interesting ways of using <a href="http://laravel.com" target="_blank">Laravel</a> framework</p>
 
         <p>The idea is simple: When you work with Laravel long enough you find some cool ways of using it, and to other people they might seem as &quot;tricks&quot; so we thought to create a centralized place for all Laravel users to share those findings.</p>',
     'about_who' => '<h2>Who?</h2>

@@ -3,7 +3,7 @@
         <a class="trick-card-title" href="{{ route('tricks.show', [ $trick->slug ]) }}">
             {!! $trick->title !!}
         </a>
-        <div class="trick-card-stats trick-card-by">by <b><a href="{{ route('user.profile', $trick->user->username) }}">{{ $trick->user->username }}</a></b></div>
+        <div class="trick-card-stats trick-card-by">by <a href="{{ route('user.profile', $trick->user->username) }}">{{ $trick->user->username }}</a></div>
         <div class="trick-card-stats clearfix">
             <div class="trick-card-timeago">{!! trans('tricks.submitted', array('timeago' => $trick->timeago, 'categories' => $trick->categories)) !!}</div>
             <div class="trick-card-stat-block"><span class="fa fa-eye"></span> {{$trick->view_cache}}</div>
