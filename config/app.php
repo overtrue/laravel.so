@@ -213,7 +213,7 @@ return [
         'Html' => Illuminate\Html\HtmlFacade::class,
 
         'Github' => App\Facades\Github::class,
-        'Duoshuo' => App\Facades\Duoshuo::class,
+        'Disqus' => App\Facades\Disqus::class,
         'GithubProvider' => App\Facades\GithubProvider::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Gravatar' => Thomaswelton\LaravelGravatar\Facades\Gravatar::class,

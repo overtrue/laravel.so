@@ -3,7 +3,7 @@
 namespace App\Repositories\Eloquent;
 
 use Pinyin;
-use Duoshuo;
+use Disqus;
 use App\Tag;
 use App\User;
 use App\Trick;
@@ -125,7 +125,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     {
         $tricks = $this->model->orderBy('created_at', 'desc')->get();
 
-        $tricks = Duoshuo::appendCommentCounts($tricks);
+        $tricks = Disqus::appendCommentCounts($tricks);
 
         $tricks = $tricks->sortBy(function ($trick) {
             return $trick->comment_count;

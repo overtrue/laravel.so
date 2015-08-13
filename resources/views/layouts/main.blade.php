@@ -52,31 +52,9 @@
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         @yield('scripts')
-        <script>
-            $(function(){
-                var $threads = [];
-
-                $('[data-duoshuo-thread-id]').each(function($item){
-                    $threads.push($(this).data('duoshuoThreadId'));
-                });
-
-                if ($threads.length) {
-                    $.ajax({
-                        url: '/tricks/comment-counts',
-                        type: 'GET',
-                        dataType: 'json',
-                        data: {threads: $threads},
-                    })
-                    .done(function($response) {
-                        var $counts = $response;
-
-                        for($thread in $counts){
-                            $('[data-duoshuo-thread-id='+$thread+']').text($counts[$thread]);
-                        }
-                    });
-                };
-
-            });
+        <script type="text/javascript">
+            var disqus_shortname = '{{ config("social.disqus.shortname") }}';
+            (function(){var e=document.createElement("script");e.async=true;e.type="text/javascript";e.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)})()
         </script>
         <script>
         var _hmt = _hmt || [];

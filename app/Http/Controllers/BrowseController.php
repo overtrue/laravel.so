@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Cache;
 use App\Repositories\TagRepositoryInterface;
 use App\Repositories\TrickRepositoryInterface;
 use App\Repositories\CategoryRepositoryInterface;
@@ -143,7 +144,13 @@ class BrowseController extends BaseController
      */
     public function getBrowseComments()
     {
-        $tricks = $this->tricks->findMostCommented();
+        $tricks = Cache::get('most_commented', function(){
+            $tricks = $this->tricks->findMostCommented();
+
+            Cache::put('most_commented', $tricks, 60);
+
+            return $tricks;
+        });
 
         $type = trans('browse.most_commented');
         $pageTitle = trans('browse.browsing_most_commented_tricks');

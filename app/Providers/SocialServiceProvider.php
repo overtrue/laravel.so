@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 use App\Services\Social\Github;
+use App\Services\Social\Disqus;
 use App\Services\Social\Duoshuo;
 use Illuminate\Support\ServiceProvider;
-use GuzzleHttp\Client as GuzzleClient;
+use Guzzle\Service\Client as GuzzleClient;
 
 class SocialServiceProvider extends ServiceProvider
 {
@@ -15,7 +16,8 @@ class SocialServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerGithub();
-        $this->registerDuoshuo();
+//        $this->registerDuoshuo();
+        $this->registerDisqus();
     }
 
     /**
@@ -32,15 +34,15 @@ class SocialServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the Duoshuo services.
+     * Register the Disqus services.
      */
-    protected function registerDuoshuo()
+    protected function registerDisqus()
     {
-        $this->app['duoshuo'] = $this->app->share(function ($app) {
+        $this->app['disqus'] = $this->app->share(function ($app) {
             $config = $app['Illuminate\Config\Repository'];
-            $guzzle = new GuzzleClient(['base_uri' => $config->get('services.duoshuo.base_uri')]);
+            $guzzle = new GuzzleClient($config->get('social.disqus.requestUrl'));
 
-            return new Duoshuo($guzzle, $config);
+            return new Disqus($guzzle, $config);
         });
     }
 }

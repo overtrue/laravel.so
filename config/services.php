@@ -39,18 +39,6 @@ return [
         'analytics_property_id' => env('GOOGLE_ANALYTICS_PROPERTY_ID'),
     ],
 
-    'disqus' => [
-        'shortname' => 'laravelso',
-    ],
-
-    'duoshuo' => [
-        'short_name' => 'laravelso',
-        'thread_key_prefix' => [
-            'trick' => 'trick.'
-        ],
-        'base_uri' => 'http://api.duoshuo.com/',
-    ],
-
     'github' => [
         'client_id'     => env('GITHUB_APP_ID'),
         'client_secret' => env('GITHUB_APP_SECRET'),

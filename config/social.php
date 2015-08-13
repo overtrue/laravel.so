@@ -31,9 +31,24 @@ return array(
     |
     */
     'disqus' => array(
-        'publicKey' => '',
-        'forum' => '',
-        'requestUrl' => 'http://disqus.com/api/3.0/threads/set.json',
+        'shortname' => env('DISQUS_SHORTNAME'),
+        'publicKey' => env('DISQUS_API_KEY'),
+        'forum' => env('DISQUS_SHORTNAME'),
+        'requestUrl' => 'https://disqus.com/api/3.0/threads/set.json',
         'threadFormat' => 'ident:',
     ),
+
+    /*
+    |--------------------------------------------------------------------------
+    | These are config variables for Duoshuo commenting system
+    |--------------------------------------------------------------------------
+    */
+    'duoshuo' => [
+        'short_name' => 'laravelso',
+        'thread_key_prefix' => [
+            'trick' => 'trick.'
+        ],
+        'base_uri' => 'http://api.duoshuo.com/',
+    ],
+
 );

@@ -4,7 +4,7 @@ namespace App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class Duoshuo extends Facade
+class Disqus extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -13,6 +13,6 @@ class Duoshuo extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'duoshuo';
+        return 'disqus';
     }
 }

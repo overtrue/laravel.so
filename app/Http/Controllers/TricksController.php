@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\Social\Disqus;
 use Duoshuo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -97,7 +98,7 @@ class TricksController extends BaseController
     }
 
     /**
-     * Get Duoshuo comments counts.
+     * Get Disqus comments counts.
      *
      * @param Request $request
      *
@@ -109,6 +110,6 @@ class TricksController extends BaseController
             return [];
         }
 
-        return response()->json(Duoshuo::getCommentCountsByIds($request->threads));
+        return response()->json(Disqus::getCommentCountsByIds($request->threads));
     }
 }

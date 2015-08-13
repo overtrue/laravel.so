@@ -11,3 +11,4 @@ vendor/
 .env.pro
 */.sass-cache
 .php_cs.cache
+sftp-config.json
