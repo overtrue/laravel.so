@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Eloquent;
 
-use Pinyin;
 use Disqus;
 use App\Tag;
 use App\User;

@@ -93,7 +93,7 @@ class TagRepository extends AbstractRepository implements TagRepositoryInterface
         $tag = $this->getNew();
 
         $tag->name = $data['name'];
-        $tag->slug = Pinyin::trans(trim($tag->name));
+        $tag->slug = $tag->name;
 
         $tag->save();
 
@@ -113,7 +113,7 @@ class TagRepository extends AbstractRepository implements TagRepositoryInterface
         $tag = $this->findById($id);
 
         $tag->name = $data['name'];
-        $tag->slug = Pinyin::trans(trim($tag->name));
+        $tag->slug = $tag->name;
 
         $tag->save();
 
