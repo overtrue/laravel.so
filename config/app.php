@@ -160,7 +160,6 @@ return [
         App\Providers\SitemapServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Overtrue\LaravelPinyin\ServiceProvider::class,
     ],
 
     /*
@@ -220,7 +219,6 @@ return [
         'ImageUpload' => App\Facades\ImageUpload::class,
         'Navigation' => App\Facades\Navigation::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Pinyin'    => Overtrue\Pinyin\Pinyin::class,
     ],
 
 ];

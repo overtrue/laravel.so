@@ -6,8 +6,6 @@
     "type": "project",
     "require": {
         "laravel/framework": "5.1.*",
-        "barryvdh/laravel-debugbar": "^2.0@dev",
-        "overtrue/wechat": "2.1.x-dev",
         "overtrue/laravel-lang": "1.0.*",
         "php": ">=5.5.9",
         "intervention/image": "2.3.*",
@@ -16,9 +14,7 @@
         "laravel/socialite": "^3.0@dev",
         "illuminate/html": "^5.0@dev",
         "mccool/laravel-auto-presenter": "^4.0@dev",
-        "overtrue/laravel-pinyin": "dev-master",
         "guzzlehttp/guzzle": "^6.0@dev",
-        "hashids/hashids": "^1.0@dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
