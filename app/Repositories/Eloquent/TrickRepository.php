@@ -205,7 +205,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     public function searchByTermPaginated($term, $perPage = 12)
     {
         $tricks = $this->model
-                        ->orWhere('title', 'LIKE', '%'.$term.'%')
+                        ->Where('title', 'LIKE', '%'.$term.'%')
                         ->orWhere('content', 'LIKE', '%'.$term.'%')
                         ->orWhereHas('tags', function ($query) use ($term) {
                             $query->where('title', 'LIKE', '%'.$term.'%')
@@ -217,6 +217,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
                         })
                         ->orderBy('created_at', 'desc')
                         ->orderBy('title', 'asc')
+                        ->whereNull('deleted_at')
                         ->paginate($perPage);
 
         return $tricks;
@@ -259,7 +260,6 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
 
         $trick->user_id = $data['user_id'];
         $trick->title = $data['title'];
-        $trick->slug = Pinyin::trans(trim($data['title']));
         $trick->content = $data['content'];
 
         $trick->save();
@@ -282,7 +282,6 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     {
         //$trick->user_id = $data['user_id'];
         $trick->title = $data['title'];
-        $trick->slug = Pinyin::trans(trim($data['title']));
         $trick->content = $data['content'];
 
         $trick->save();

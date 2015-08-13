@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Trick;
+use App\Observers\TrickObserver;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -11,6 +13,7 @@ class ObserverServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Trick::observe(TrickObserver::class);
     }
 
     /**

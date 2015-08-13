@@ -11,6 +11,7 @@ use App\Services\Social\Github;
 use Illuminate\Auth\Guard;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\UserRepositoryInterface;
 use App\Exceptions\GithubEmailNotVerifiedException;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -37,11 +38,19 @@ class AuthController extends BaseController
     protected $request;
 
     /**
+     * Users
+     *
+     * @var UserRepositoryInterface
+     */
+    protected $users;
+
+    /**
      * Create a new authentication controller instance.
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request, UserRepositoryInterface $users)
     {
         $this->reqeust = $request;
+        $this->users = $users;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
 

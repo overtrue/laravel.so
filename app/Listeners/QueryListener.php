@@ -34,7 +34,11 @@ class QueryListener
                     $params[$index] = $param->format('Y-m-d H:i:s');
                 }
             }
-            Log::info($sql.', with['.implode(',', $params).']');
+            $sql = str_replace("?", "'%s'", $sql);
+
+            array_unshift($params, $sql);
+
+            Log::info(call_user_func_array('sprintf', $params));
         }
     }
 }

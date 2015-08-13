@@ -18,6 +18,7 @@
         <meta name="author" content="{{ trans('layouts.meta_author') }}">
         <meta name="google-site-verification" content="e2Aj3BCstJLN5LImLRFGVMC0CiDz0FpLL05xDvrOEdw" />
         <meta name="baidu_union_verify" content="a18b9ce01c21e05e1c6da22902081f79">
+        <meta name="baidu-site-verification" content="viPe2MpL6v" />
         <title> @yield('title') | {{ trim(trans('layouts.site_title')) }} </title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">

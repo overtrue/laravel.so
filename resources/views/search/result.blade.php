@@ -2,19 +2,6 @@
 
 @section('title', trans('search.search_results_for', array('term' => $term)))
 
-@section('scripts')
-<script type="text/javascript">
-$(function(){var s=$('.search-box');var t=s.val();s.focus().val('').val(t);});
-</script>
-
-@if(count($tricks))
-    <script src="{{ asset('js/vendor/masonry.pkgd.min.js') }}"></script>
-    <script>
-    $(function(){$container=$(".js-trick-container");$container.masonry({gutter:0,itemSelector:".trick-card",columnWidth:".trick-card"});$(".js-goto-trick a").click(function(e){e.stopPropagation()});$(".js-goto-trick").click(function(e){e.preventDefault();var t="{{ route('tricks.show') }}";var n=$(this).data("slug");window.location=t+"/"+n})})
-    </script>
-@endif
-@stop
-
 @section('content')
     <div class="container">
         @if($term != '')

@@ -52,7 +52,7 @@ class RegistrationForm extends AbstractForm
      */
     protected function getPreparedRules()
     {
-        $forbidden = $this->config->get('config.forbidden_usernames');
+        $forbidden = $this->config->get('config.forbidden_usernames', []);
         $forbidden = implode(',', $forbidden);
 
         $this->rules['username'] .= '|not_in:'.$forbidden;
