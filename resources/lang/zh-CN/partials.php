@@ -13,7 +13,10 @@ return array(
     'my_favorites' => '我的收藏',
     'settings' => '设置',
     'logout' => '登出',
-    'footer_links' => '<a target="_blank" href="http://weibo.com/joychaocc" title="关注我"><i class="fa fa-weibo fa-lg"></i></a>
+    'friends_links' => [
+        'PHP学院' => 'http://www.phpxy.com',
+    ],
+    'footer_links' => ' <a target="_blank" href="http://weibo.com/joychaocc" title="关注我"><i class="fa fa-weibo fa-lg"></i></a>
         |
         <a target="_blank" href="https://github.com/laravelso/site" title="获取本站源码"><i class="fa fa-github fa-lg"></i></a>',
 
