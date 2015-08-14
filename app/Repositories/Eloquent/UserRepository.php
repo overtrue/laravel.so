@@ -161,7 +161,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         if ($data['avatar'] != '') {
             File::move(public_path().'/img/avatar/temp/'.$data['avatar'], 'img/avatar/'.$data['avatar']);
 
-            if ($user->photo) {
+            if ($user->photo != $data['avatar']) {
                 File::delete(public_path().'/img/avatar/'.$user->photo);
             }
 

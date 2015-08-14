@@ -4,11 +4,11 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{ asset('css/jquery.Jcrop.min.css') }}">
-<script>
+<style>
   .jcrop-holder {
     margin: 0 auto;
   }
-</script>
+</style>
 @stop
 
 @section('scripts')

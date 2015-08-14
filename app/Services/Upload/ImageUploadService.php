@@ -88,11 +88,13 @@ class ImageUploadService
     /**
      * Make a new unique filename.
      *
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
      * @return string
      */
-    protected function makeFilename()
+    protected function makeFilename(UploadedFile $file)
     {
-        return sha1(time().time()).".{$this->extension}";
+        return md5_file($file->getRealPath()).".{$this->extension}";
     }
 
     /**
@@ -166,15 +168,17 @@ class ImageUploadService
     public function handle(UploadedFile $file)
     {
         $mime = $file->getMimeType();
-        $filename = $this->makeFilename();
+        $filename = $this->makeFilename($file);
         $path = $this->getFullPath($this->directory.'/'.$filename);
 
-        $success = Image::make($file->getRealPath())
-                        ->resize($this->size, $this->size)
-                        ->save($path, $this->quality);
+        if (!is_file($path)) {
+            $success = Image::make($file->getRealPath())
+                            ->resize($this->size, $this->size)
+                            ->save($path, $this->quality);
 
-        if (!$success) {
-            return false;
+            if (!$success) {
+                return false;
+            }
         }
 
         return $this->getJsonBody($filename, $mime, $path);
