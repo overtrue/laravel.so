@@ -15,6 +15,8 @@ return array(
     'logout' => '登出',
     'friends_links' => [
         'PHP学院' => 'http://www.phpxy.com',
+        'PHP问答' => 'http://wenda.phpxy.com',
+        'PHP教程' => 'http://www.phpxy.com/book.html',
     ],
     'footer_links' => ' <a target="_blank" href="http://weibo.com/joychaocc" title="关注我"><i class="fa fa-weibo fa-lg"></i></a>
         |
