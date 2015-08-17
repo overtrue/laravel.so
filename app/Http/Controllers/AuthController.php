@@ -134,8 +134,6 @@ class AuthController extends BaseController
 
             return Socialite::driver('github')->redirect();
         } else {
-
-
             try {
                 $user = $github->register(Socialite::driver('github')->user());
                 $auth->login($user);
