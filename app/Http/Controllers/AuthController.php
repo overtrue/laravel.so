@@ -49,7 +49,7 @@ class AuthController extends BaseController
      */
     public function __construct(Request $request, UserRepositoryInterface $users)
     {
-        $this->reqeust = $request;
+        $this->request = $request;
         $this->users = $users;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
@@ -128,12 +128,14 @@ class AuthController extends BaseController
      */
     public function getLoginWithGithub(Github $github, Guard $auth)
     {
-        if (! $this->reqeust->has('state')) {
+        if (! $this->request->has('state')) {
             session()->keep(['url']);
             Config::set('services.github.redirect', URL::full());
 
             return Socialite::driver('github')->redirect();
         } else {
+
+
             try {
                 $user = $github->register(Socialite::driver('github')->user());
                 $auth->login($user);
