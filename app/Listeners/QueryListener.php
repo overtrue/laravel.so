@@ -4,7 +4,6 @@ namespace App\Listeners;
 
 use Log;
 use DateTime;
-
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 

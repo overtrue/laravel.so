@@ -144,7 +144,7 @@ class BrowseController extends BaseController
      */
     public function getBrowseComments()
     {
-        $tricks = Cache::get('most_commented', function(){
+        $tricks = Cache::get('most_commented', function () {
             $tricks = $this->tricks->findMostCommented();
 
             Cache::put('most_commented', $tricks, 60);
