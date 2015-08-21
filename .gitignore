@@ -5,7 +5,6 @@ _Store
 .DS_Store
 
 vendor/
-*storage/
 */node_modules
 */.sass-cache
 
