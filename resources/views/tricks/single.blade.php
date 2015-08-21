@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('title', $trick->pageTitle)
-
+@section('site-title', "#Laravel# 《{$trick->title}》")
 @section('description', $trick->pageDescription)
 
 @section('styles')
