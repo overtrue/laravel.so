@@ -25,7 +25,7 @@ function image($path)
     return url(config('image.prefix').'/'.$path);
 }
 
-function least($type, ...$items)
+function least($type, $items)
 {
     foreach ($items as $item) {
         if (gettype($item) == $type) {

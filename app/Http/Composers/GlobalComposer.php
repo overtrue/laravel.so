@@ -11,7 +11,7 @@ class GlobalComposer
     {
         $frontend = new Fluent();
 
-        $frontend->links = least('array', Link::all()->toArray(), []);
+        $frontend->links = least('array', [Link::all()->toArray(), []]);
 
         $view->with('frontend', $frontend);
     }
