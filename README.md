@@ -20,6 +20,11 @@ composer install -vvv
 
 1. 修改目录权限:
 
+```
+chmod -R 755 ./
+chmod -R 777 ./storage
+```
+
 1. 编辑 .env 并正确填写数据库部分。
 
 ```
@@ -34,5 +39,8 @@ php artisan migrate
 php artisan db:seed
 ```
 
-4.
+# License
+
+MIT
+
 
