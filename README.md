@@ -39,6 +39,8 @@ http://laravel.so
   php artisan db:seed
   ```
 
+用户名：`admin` 密码：`password`
+
 # License
 
 MIT
