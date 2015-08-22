@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
 @section('title', $pageTitle)
-@section('site-title', $pageTitle)
 
 @section('content')
     <div class="container">
