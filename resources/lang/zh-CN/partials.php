@@ -6,7 +6,7 @@ return array(
     'register' => '注册',
     'login' => '登录',
     'profile' => '资料',
-    'my_tricks' => '我的技巧',
+    'my_tricks' => '我的 Laravel 技巧',
     'my_profile' => '个人资料',
     'toggle_navigation' => '折叠导航',
     'search_placeholder' => '搜索...',
@@ -19,7 +19,7 @@ return array(
         'PHP教程' => 'http://www.phpxy.com/book.html',
     ],
     'footer_links' => ' <a target="_blank" href="http://weibo.com/joychaocc" title="关注我"><i class="fa fa-weibo fa-lg"></i></a>
-        |
+        ・
         <a target="_blank" href="https://github.com/laravelso/site" title="获取本站源码"><i class="fa fa-github fa-lg"></i></a>',
 
 );

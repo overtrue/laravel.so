@@ -15,7 +15,7 @@
         <meta property="og:description" content="@yield('description')" />
         <meta name="keywords" content="@yield('keywords', trans('layouts.meta_keywords'))">
         <meta name="description" content="@yield('description')">
-        <meta name="site-title" content="@yield('site-title')">
+        <meta name="site-title" content="@yield('site-title', trans('layouts.site_title'))">
         <meta name="author" content="{{ trans('layouts.meta_author') }}">
         <meta name="google-site-verification" content="e2Aj3BCstJLN5LImLRFGVMC0CiDz0FpLL05xDvrOEdw" />
         <meta name="google-site-verification" content="MrFzQBXxCihlrGCRW0UaLkiPk81MqFfxYKlrVnAQK2Q" />
@@ -25,6 +25,7 @@
         <title> @yield('title') | {{ trim(trans('layouts.site_title')) }} </title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('share.js/share.css') }}">
         @yield('styles')
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -54,8 +55,13 @@
 
         <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery.qrcode.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('share.js/share.js') }}"></script>
         @yield('scripts')
         <script type="text/javascript">
+            $(function(){
+                $('.sns-share').share();
+            })
             var disqus_shortname = '{{ config("social.disqus.shortname") }}';
             (function(){var e=document.createElement("script");e.async=true;e.type="text/javascript";e.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)})()
         </script>

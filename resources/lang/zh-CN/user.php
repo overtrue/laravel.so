@@ -7,7 +7,7 @@ return array(
     'settings' => '设置',
     'welcome' => '欢迎光临!',
     'welcome_subtitle' => '浏览、创建或分享您的 Laravel 技巧!',
-    'my_tricks' => '我的技巧',
+    'my_tricks' => '我的 Laravel 技巧',
     'create_new' => '创建',
     'submitted_tricks' => '已提交',
     'last_trick' => '最近发布:',

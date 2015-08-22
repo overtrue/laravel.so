@@ -5,7 +5,7 @@ return array(
     'submitted' => '发布于 :timeago :categories',
     'are_you_sure' => '确定?',
     'cancel' => '取消',
-    'creating_new_trick' => '发布新的技巧',
+    'creating_new_trick' => '发布新的 Laravel 技巧',
     'update_trick' => '更新',
     'delete' => '删除',
     'title' => '标题',

@@ -345,14 +345,17 @@ a.tag:hover {
 .nav.nav-pills > li {
     float: none;
 }
+
 @media (min-width: 768px) {
     .nav.nav-pills > li {
         float: left;
     }
+
     h1.page-title {
         display: inline-block;
         margin: 0;
     }
+
     .navbar-default .navbar-collapse {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
@@ -406,20 +409,47 @@ a.tag:hover {
     padding: 0 0 60px;
 }
 
-#footer {
-    height: 60px;
-    margin-top:22px;
-    background-color: #fff;
-    -webkit-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
-    -moz-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
-    box-shadow: 0 -1px 2px rgba(0,0,0,.1);
-}
 
-.container .credit {
+#footer > .container .credit {
     margin: 20px 0;
 }
 
 #footer > .container {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+#footer {
+    line-height: 30px;
+    margin-top:22px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+    -moz-box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 -1px 2px rgba(0,0,0,.1);
+
+    .sns-share-component .icon{
+        font-size: 18px;
+        background: none;
+        margin: 0 8px;
+        padding:0;
+        color: #888;
+        -webkit-transition: background 0.2s ease-out 0s;
+        -moz-transition: background 0.2s ease-out 0s;
+        transition: background 0.2s ease-out 0s;
+
+    }
+
+    .sns-share-component .icon:hover{
+      color: #444;
+    }
+
+    .about {
+        text-align: right;
+    }
+}
+
+@media (max-width: 1000px) {
+    #footer .links, #footer .about {
+        text-align:center;
+    }
 }

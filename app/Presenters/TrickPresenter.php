@@ -157,6 +157,23 @@ class TrickPresenter extends BasePresenter
         return $content;
     }
 
+    // /**
+    //  * Get the author name of this tirck.
+    //  *
+    //  * // XXX: weibo username is useful. :(
+    //  *
+    //  * @return string
+    //  */
+    // public function trickAuthor()
+    // {
+    //     if ($this->wrappedObject->user->profile
+    //         && $this->wrappedObject->user->profile->username) {
+    //         return $this->wrappedObject->user->profile->username;
+    //     }
+
+    //     return $this->wrappedObject->user->username;
+    // }
+
     /**
      * Get the meta title for this trick.
      *

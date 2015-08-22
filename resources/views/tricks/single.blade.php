@@ -1,22 +1,14 @@
 @extends('layouts.main')
 
 @section('title', $trick->pageTitle)
-@section('site-title', "#Laravel# 《{$trick->title}》")
+@section('site-title', "#Laravel#《{$trick->title}》")
 @section('description', $trick->pageDescription)
-
-@section('styles')
-<link rel="stylesheet" href="{{ asset('share.js/share.css') }}">
-@stop
 
 @section('scripts')
     <script src="{{ asset('js/prism.js')}}" data-default-language="php"></script>
     <script type="text/javascript" src="{{ asset('js/marked.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.qrcode.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('share.js/share.js') }}"></script>
     <script type="text/javascript">
     (function($) {
-        $('.sns-share').share();
-
         $('[data-toggle=tooltip]').tooltip();
         marked.setOptions({
           renderer: new marked.Renderer(),
