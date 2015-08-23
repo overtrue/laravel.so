@@ -68,6 +68,7 @@
                             <label for="title">{{ trans('tricks.title') }}</label>
                             @text('title', null, array('class'=>'form-control','placeholder' => trans('tricks.title_placeholder')))
                         </div>
+                        <div class="form-group">请注意格式，代码部分请带上语言类型，例如：<code>```php</code>。写完请点击预览查看一下结果再点击发布，谢谢！ </div>
                         <div class="form-group">
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#input-wrapper" aria-controls="home" role="tab" data-toggle="tab">{{ trans('tricks.content') }}</a></li>
