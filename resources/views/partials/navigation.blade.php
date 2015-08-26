@@ -36,7 +36,7 @@
                 <ul class="nav">
                     <li class="dropdown {{( Request::segment(2) == 'settings' || Request::segment(2)=='favorites' ? 'active' : false )}}">
                       <a href="#" class="dropdown-toggle btn btn-primary" data-toggle="dropdown">
-                      <img src="{{ Auth::user()->photocss }}" width="26px" class="user-avatar-mini"> {{ trans('partials.profile') }}
+                      <img src="{{ Auth::user()->photocss }}" width="26px" class="user-avatar-mini"> {{ Auth::user()->username }}
                       <b class="caret"></b>
                       </a>
                       <ul class="dropdown-menu">

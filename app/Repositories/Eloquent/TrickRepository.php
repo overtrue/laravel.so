@@ -31,6 +31,8 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     protected $tag;
 
+    const PAGE_SIZE = 12;
+
     /**
      * Create a new DbTrickRepository instance.
      *
@@ -53,7 +55,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findAllForUser(User $user, $perPage = 9)
+    public function findAllForUser(User $user, $perPage = self::PAGE_SIZE)
     {
         $tricks = $user->tricks()->orderBy('created_at', 'DESC')->paginate($perPage);
 
@@ -68,7 +70,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findAllFavorites(User $user, $perPage = 9)
+    public function findAllFavorites(User $user, $perPage = self::PAGE_SIZE)
     {
         $tricks = $user->votes()->orderBy('created_at', 'DESC')->paginate($perPage);
 
@@ -94,7 +96,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findAllPaginated($perPage = 9)
+    public function findAllPaginated($perPage = self::PAGE_SIZE)
     {
         $tricks = $this->model->orderBy('created_at', 'DESC')->paginate($perPage);
 
@@ -108,7 +110,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findMostRecent($per_page = 9)
+    public function findMostRecent($per_page = self::PAGE_SIZE)
     {
         return $this->findAllPaginated($per_page);
     }
@@ -120,7 +122,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findMostCommented($perPage = 9)
+    public function findMostCommented($perPage = self::PAGE_SIZE)
     {
         $tricks = $this->model->orderBy('created_at', 'desc')->get();
 
@@ -145,7 +147,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findMostPopular($per_page = 9)
+    public function findMostPopular($per_page = self::PAGE_SIZE)
     {
         return $this->model
                     ->orderByRaw('(tricks.vote_cache * 5 + tricks.view_cache) DESC')
@@ -180,7 +182,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return array
      */
-    public function findByCategory($slug, $perPage = 9)
+    public function findByCategory($slug, $perPage = self::PAGE_SIZE)
     {
         $category = $this->category->whereSlug($slug)->first();
 
@@ -201,7 +203,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function searchByTermPaginated($term, $perPage = 12)
+    public function searchByTermPaginated($term, $perPage = self::PAGE_SIZE)
     {
         $tricks = $this->model
                         ->Where('title', 'LIKE', '%'.$term.'%')
@@ -314,7 +316,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findByTag($slug, $perPage = 9)
+    public function findByTag($slug, $perPage = self::PAGE_SIZE)
     {
         $tag = $this->tag->whereSlug($slug)->first();
 

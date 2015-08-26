@@ -147,6 +147,7 @@
                         @endif
                     </div>
                 </div>
+                @include('ads.sidebar')
             </div>
         </div>
         {{--<div class="row">
