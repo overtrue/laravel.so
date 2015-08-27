@@ -136,7 +136,7 @@ class AuthController extends BaseController
         } else {
             try {
                 $user = $github->register(Socialite::driver('github')->user());
-                $auth->login($user);
+                $auth->login($user, true);
 
                 if (session()->get('password_required')) {
                     return $this->redirectRoute('user.settings', [], [
