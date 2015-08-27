@@ -110,7 +110,7 @@ class AuthController extends BaseController
         }
 
         if ($user = $this->users->create($form->getInputData())) {
-            $auth->login($user);
+            $auth->login($user, true);
 
             return $this->redirectRoute('user.index', [], ['first_use' => true]);
         }
