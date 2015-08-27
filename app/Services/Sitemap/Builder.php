@@ -94,7 +94,7 @@ class Builder
      */
     protected function getTypes()
     {
-        return $this->config->get('sitemap');
+        return $this->config->get('sitemap.types');
     }
 
     /**
