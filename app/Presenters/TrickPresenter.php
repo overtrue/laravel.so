@@ -144,7 +144,7 @@ class TrickPresenter extends BasePresenter
     {
         $content = $this->wrappedObject->content;
         $maxLength = 160;
-        $content = str_replace(['"', "\n", "\r", "##", "```php", "```"], '', $content);
+        $content = str_replace(['"', "\n", "\r", "#", "```php", "```"], '', $content);
 
         if (strlen($content) > $maxLength) {
             while (strlen($content) + 3 > $maxLength) {
