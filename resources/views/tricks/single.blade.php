@@ -5,8 +5,8 @@
 @section('description', $trick->pageDescription)
 
 @section('scripts')
-    <script src="{{ asset('js/prism.js')}}" data-default-language="php"></script>
-    <script type="text/javascript" src="{{ asset('js/marked.min.js') }}"></script>
+    <script src="{{ asset('js/vendor/prism.js')}}" data-default-language="php"></script>
+    <script type="text/javascript" src="{{ asset('js/vendor/marked.min.js') }}"></script>
     <script type="text/javascript">
     (function($) {
         $('[data-toggle=tooltip]').tooltip();

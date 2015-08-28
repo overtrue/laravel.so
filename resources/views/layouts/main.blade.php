@@ -53,15 +53,21 @@
 
         </script>
 
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('js/jquery.qrcode.min.js') }}"></script>
+        <script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/vendor/jquery.qrcode.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('share.js/share.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/vendor/pangu.min.js') }}"></script>
         @yield('scripts')
         <script type="text/javascript">
             $(function(){
                 $('.sns-share').share();
-            })
+            });
+
+            // 有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。与大家共勉之。。。。
+              pangu.element_spacing('.trick-card');
+              pangu.element_spacing('.content-box');
+
             var disqus_shortname = '{{ config("social.disqus.shortname") }}';
             (function(){var e=document.createElement("script");e.async=true;e.type="text/javascript";e.src="//"+disqus_shortname+".disqus.com/count.js";(document.getElementsByTagName("HEAD")[0]||document.getElementsByTagName("BODY")[0]).appendChild(e)})()
         </script>

@@ -44,13 +44,13 @@
 
 @section('scripts')
     <script type="text/javascript" src="{{ asset('js/vendor/selectize/js/standalone/selectize.min.js') }}"></script>
-    <script src="{{ asset('js/prism.js')}}"></script>
+    <script src="{{ asset('js/vendor/prism.js')}}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/ace.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/theme-github.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/mode-php.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/ext-language_tools.js') }}"></script>
     <script src="{{ asset('js/vendor/ace/src-min/snippets/php.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/marked.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/vendor/marked.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/trick-new-edit.min.js') }}"></script>
 @stop
 
