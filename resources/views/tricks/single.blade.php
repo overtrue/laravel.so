@@ -44,7 +44,7 @@
                     @endif
                     <div class="trick-user">
                         <div class="trick-user-image">
-                            <img src="{{ $trick->user->photocss }}" class="user-avatar">
+                            <img src="{{ $trick->user->avatar }}" class="user-avatar">
                         </div>
                         <div class="trick-user-data">
                             <h1 class="page-title">

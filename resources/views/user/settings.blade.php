@@ -137,7 +137,7 @@ jQuery(function ($){
               <div class="col-lg-8">
                 <input type="hidden" id="avatar-hidden" name="avatar" value="">
                 <div id="upload-avatar" class="upload-avatar">
-                  <div class="userpic" style="background-image: url('{!! Auth::user()->photocss!!}');">
+                  <div class="userpic" style="background-image: url('{!! Auth::user()->avatar!!}');">
                      <div class="js-preview userpic__preview"></div>
                   </div>
                   <div class="btn btn-sm btn-primary js-fileapi-wrapper">

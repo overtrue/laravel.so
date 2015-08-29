@@ -2,6 +2,7 @@
 
 namespace App\Presenters;
 
+use Gravatar;
 use App\User;
 use McCool\LaravelAutoPresenter\BasePresenter;
 
@@ -54,5 +55,25 @@ class UserPresenter extends BasePresenter
         }
 
         return $this->wrappedObject->username;
+    }
+
+
+    /**
+     * Get the user's avatar image.
+     *
+     * @return string
+     */
+    public function avatar()
+    {
+        if (false != stripos($this->photo, 'http://')
+            || false !== stripos($this->photo, 'https://')) {
+            return $this->photo;
+        }
+
+        if ($this->photo) {
+            return url('img/avatar/'.$this->photo);
+        }
+
+        return Gravatar::src($this->email, 100);
     }
 }
