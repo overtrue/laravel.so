@@ -9,7 +9,7 @@
             <div class="content-box">
                 <div class="trick-user">
                     <div class="trick-user-image">
-                        <img src="{{ $user->photocss }}" class="user-avatar">
+                        <img src="{{ $user->avatar }}" class="user-avatar">
                     </div>
                     <div class="trick-user-data">
                         <h1 class="page-title">

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Gravatar;
 use App\Presenters\UserPresenter;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
@@ -67,25 +66,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function votes()
     {
         return $this->belongsToMany(Trick::class, 'votes');
-    }
-
-    /**
-     * Get the user's avatar image.
-     *
-     * @return string
-     */
-    public function getPhotocssAttribute()
-    {
-        if (false != stripos($this->photo, 'http://')
-            || false !== stripos($this->photo, 'https://')) {
-            return $this->photo;
-        }
-
-        if ($this->photo) {
-            return url('img/avatar/'.$this->photo);
-        }
-
-        return Gravatar::src($this->email, 100);
     }
 
     /**
