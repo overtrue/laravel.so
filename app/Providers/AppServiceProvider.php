@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App;
 use Blade;
 use Illuminate\Support\ServiceProvider;
+use Naux\AutoCorrect;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        App::singleton('AutoCorrect', function (){
+            return (new AutoCorrect);
+        });
     }
 }

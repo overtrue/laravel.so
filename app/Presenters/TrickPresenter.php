@@ -5,9 +5,11 @@ namespace App\Presenters;
 use App\User;
 use App\Trick;
 use App\Category;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Html\HtmlFacade as HTML;
 use McCool\LaravelAutoPresenter\BasePresenter;
+use Naux\AutoCorrect;
 
 class TrickPresenter extends BasePresenter
 {
@@ -192,6 +194,16 @@ class TrickPresenter extends BasePresenter
         }
 
         return e($title);
+    }
+
+    /**
+     * Get the correct title for this trick.
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return app('AutoCorrect')->convert($this->getWrappedObject()->title);
     }
 
     /**

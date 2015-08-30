@@ -14,7 +14,8 @@
         "laravel/socialite": "^3.0@dev",
         "illuminate/html": "^5.0@dev",
         "mccool/laravel-auto-presenter": "^4.0@dev",
-        "guzzlehttp/guzzle": "^6.0@dev"
+        "guzzlehttp/guzzle": "^6.0@dev",
+        "naux/auto-correct": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
