@@ -14,7 +14,9 @@ class GlobalComposer
     {
         $frontend = new Fluent();
 
-        $frontend->user = new UserPresenter(Auth::user());
+        if (Auth::check()) {
+            $frontend->user = new UserPresenter(Auth::user());
+        }
 
         $frontend->links = Cache::get('links', function(){
             $links = least('array', [Link::all()->toArray(), []]);
