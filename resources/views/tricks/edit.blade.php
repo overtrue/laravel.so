@@ -61,7 +61,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-push-2 col-md-8 col-md-push-2 col-sm-12 col-xs-12">
                 <div class="content-box">
-                    @if(Auth::check() && (Auth::user()->id == $trick->user_id))
+                    @if(Auth::check() && ($frontend->user->id == $trick->user_id))
                         <div class="pull-right">
                             <a data-toggle="modal" href="#deleteModal">{{ trans('tricks.delete') }}</a>
                             @include('tricks.delete',['link' => $trick->deleteLink])

@@ -118,7 +118,7 @@ jQuery(function ($){
             <div class="form-group {{Session::get('username_required')? 'has-error': ''}}">
               <label for="username" class="col-lg-4 control-label">{{ trans('user.username') }}</label>
               <div class="col-lg-8">
-                @text('username', Auth::user()->username, array('class'=>'form-control','placeholder'=>'Username'))
+                @text('username', $frontend->user->username, array('class'=>'form-control','placeholder'=>'Username'))
                 @if(Session::get('username_required'))
                   <span class="help-block">{{ trans('user.github_user_already_taken') }}</span>
                 @endif
@@ -128,7 +128,7 @@ jQuery(function ($){
             <div class="form-group">
               <label for="email" class="col-lg-4 control-label">{{ trans('user.email') }}</label>
               <div class="col-lg-8">
-                <input type="email" disabled class="form-control" id="email" placeholder="{{Auth::user()->email}}">
+                <input type="email" disabled class="form-control" id="email" placeholder="{{$frontend->user->email}}">
               </div>
             </div>
 
@@ -137,7 +137,7 @@ jQuery(function ($){
               <div class="col-lg-8">
                 <input type="hidden" id="avatar-hidden" name="avatar" value="">
                 <div id="upload-avatar" class="upload-avatar">
-                  <div class="userpic" style="background-image: url('{!! Auth::user()->avatar!!}');">
+                  <div class="userpic" style="background-image: url('{!! $frontend->user->avatar!!}');">
                      <div class="js-preview userpic__preview"></div>
                   </div>
                   <div class="btn btn-sm btn-primary js-fileapi-wrapper">

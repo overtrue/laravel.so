@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-8">
                 <div class="content-box">
-                    @if(Auth::check() && (Auth::user()->id == $trick->user_id))
+                    @if(Auth::check() && ($frontend->user->id == $trick->user_id))
                         <div class="text-right">
                             <a data-toggle="modal" href="#deleteModal">删除</a> |
                             <a href="{{$trick->editLink}}">编辑</a>
@@ -84,12 +84,12 @@
                     <h5>{{ trans('tricks.stats') }}</h5>
                     <ul class="nav nav-list push-down list-group trick-stats">
                         <li class="list-group-item">
-                            <a href="#" class="js-like-trick" data-liked="{{ $trick->likedByUser(Auth::user()) ? '1' : '0'}}">
+                            <a href="#" class="js-like-trick" data-liked="{{ $trick->likedByUser($frontend->user) ? '1' : '0'}}">
 
-                            <span class="fa fa-heart @if($trick->likedByUser(Auth::user())) text-primary @endif"></span>
+                            <span class="fa fa-heart @if($trick->likedByUser($frontend->user)) text-primary @endif"></span>
                             @if(Auth::check())
                             <span class="js-like-status">
-                                @if($trick->likedByUser(Auth::user()))
+                                @if($trick->likedByUser($frontend->user))
                                     {{ trans('tricks.liked') }}
                                 @else
                                     {{ trans('tricks.like') }}

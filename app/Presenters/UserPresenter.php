@@ -57,7 +57,6 @@ class UserPresenter extends BasePresenter
         return $this->wrappedObject->username;
     }
 
-
     /**
      * Get the user's avatar image.
      *
@@ -65,15 +64,16 @@ class UserPresenter extends BasePresenter
      */
     public function avatar()
     {
-        if (false != stripos($this->photo, 'http://')
-            || false !== stripos($this->photo, 'https://')) {
-            return $this->photo;
+        if (false != stripos($this->wrappedObject->photo, 'http://')
+            || false !== stripos($this->wrappedObject->photo, 'https://')) {
+
+            return $this->wrappedObject->photo;
         }
 
-        if ($this->photo) {
-            return url('img/avatar/'.$this->photo);
+        if ($this->wrappedObject->photo) {
+            return url('img/avatar/'.$this->wrappedObject->photo);
         }
 
-        return Gravatar::src($this->email, 100);
+        return Gravatar::src($this->wrappedObject->email, 100);
     }
 }

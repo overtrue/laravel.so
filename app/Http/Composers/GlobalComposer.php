@@ -2,8 +2,11 @@
 
 namespace App\Http\Composers;
 
-use Illuminate\Support\Fluent;
+use Auth;
+use App\Presenters\UserPresenter;
 use App\Link;
+use Cache;
+use Illuminate\Support\Fluent;
 
 class GlobalComposer
 {
@@ -11,7 +14,15 @@ class GlobalComposer
     {
         $frontend = new Fluent();
 
-        $frontend->links = least('array', [Link::all()->toArray(), []]);
+        $frontend->user = new UserPresenter(Auth::user());
+
+        $frontend->links = Cache::get('links', function(){
+            $links = least('array', [Link::all()->toArray(), []]);
+
+            Cache::put('links', $links, 60000);
+
+            return $links;
+        });
 
         $view->with('frontend', $frontend);
     }
