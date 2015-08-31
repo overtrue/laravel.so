@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-lg-9 col-md-8">
                 <div class="content-box">
-                    @if(Auth::check() && ($frontend->user->id == $trick->user_id))
+                    @if(Auth::check() && ($frontend->user->id == $trick->user_id || $frontend->user->isAdmin()))
                         <div class="text-right">
                             <a data-toggle="modal" href="#deleteModal">删除</a> |
                             <a href="{{$trick->editLink}}">编辑</a>

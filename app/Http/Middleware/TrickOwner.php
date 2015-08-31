@@ -60,7 +60,7 @@ class TrickOwner
         $slug = $this->getSlug($request->route());
         $userId = $this->getUserId();
 
-        if (!$this->isTrickOwnedByUser($slug, $userId)) {
+        if (!$this->auth->user()->isAdmin() && !$this->isTrickOwnedByUser($slug, $userId)) {
             return $this->redirect->route('browse.recent');
         }
 

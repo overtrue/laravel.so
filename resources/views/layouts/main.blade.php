@@ -15,7 +15,7 @@
         <meta property="og:description" content="@yield('description')" />
         <meta name="keywords" content="@yield('keywords', trans('layouts.meta_keywords'))">
         <meta name="description" content="@yield('description')">
-        <meta name="site-title" content="@yield('site-title', trans('layouts.site_title')) ・">
+        <meta name="site-title" content="@yield('site-title', trans('layouts.site_title'))">
         <meta name="author" content="{{ trans('layouts.meta_author') }}">
         <meta name="google-site-verification" content="e2Aj3BCstJLN5LImLRFGVMC0CiDz0FpLL05xDvrOEdw" />
         <meta name="google-site-verification" content="MrFzQBXxCihlrGCRW0UaLkiPk81MqFfxYKlrVnAQK2Q" />
@@ -61,7 +61,9 @@
         @yield('scripts')
         <script type="text/javascript">
             $(function(){
-                $('.sns-share').share();
+                $('.sns-share').share({
+                    weiboAppendDescription: false,
+                });
             });
 
             // 有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。与大家共勉之。。。。
