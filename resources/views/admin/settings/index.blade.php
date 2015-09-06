@@ -12,13 +12,13 @@
                 <div class="form-group">
                     <label for="site_name" class="col-lg-2 control-label">网站名称</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="site_name" placeholder="例如：海外医疗导航">
+                        <input type="text" class="form-control" id="site_name" placeholder="例如：Laravel.so">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="site_title" class="col-lg-2 control-label">副标题</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="site_title" placeholder="例如：最权威的xxxxx... 10-15字左右">
+                        <input type="text" class="form-control" id="site_title" placeholder="例如：Laravel教程，技巧分享... 10-15字左右">
                     </div>
                 </div>
                 <div class="form-group">
