@@ -11,7 +11,7 @@ Carbon\Carbon::setLocale('zh');
     | and give it the controller to call when that URI is requested.
     |
 */
-Route::when('admin/*', 'admin');
+Route::when('dashboard/*', 'admin');
 Route::when('*', 'trick.view_throttle');
 
 # Route patterns
@@ -90,7 +90,7 @@ Route::get('{user}', ['as' => 'user.profile', 'uses' => 'UserController@getPubli
  * Admin
  */
 $admin = [
-            'prefix' => 'admin',
+            'prefix' => 'dashboard',
             'namespace' => 'Admin',
             'middleware' => 'admin',
          ];
