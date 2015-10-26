@@ -1,4 +1,4 @@
-<div href="#" class="trick-card col-lg-4 col-md-6 col-sm-6 col-xs-12">
+<div class="trick-card col-lg-4 col-md-6 col-sm-6 col-xs-12">
     <div class="trick-card-inner js-goto-trick" data-slug="{{ $trick->slug }}">
         <a class="trick-card-title" href="{{ route('tricks.show', [ $trick->slug ]) }}">
             {!! $trick->title !!}
