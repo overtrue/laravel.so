@@ -17,6 +17,8 @@ return array(
         'PHP学院' => 'http://www.phpxy.com',
         'PHP问答' => 'http://wenda.phpxy.com',
         'PHP教程' => 'http://www.phpxy.com/book.html',
+        'Laravel.ren' => 'http://www.laravel.ren',
+        'Laravel学院' => 'http://laravelacademy.org/',
     ],
     'footer_links' => ' <a target="_blank" href="http://weibo.com/joychaocc" title="关注我"><i class="fa fa-weibo fa-lg"></i></a>
         ・
