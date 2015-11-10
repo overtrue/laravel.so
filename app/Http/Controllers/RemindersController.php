@@ -34,9 +34,9 @@ class RemindersController extends BaseController
 
         switch ($result) {
             case Password::INVALID_USER:
-                return Redirect::back()->with('success', true);
+                return Redirect::back()->with('error', trans(Password::INVALID_USER));
 
-            case Password::REMINDER_SENT:
+            case Password::RESET_LINK_SENT:
                 return Redirect::back()->with('success', true);
         }
     }

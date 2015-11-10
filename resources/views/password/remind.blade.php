@@ -14,6 +14,11 @@
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                         {{ trans('password.mail_has_been_sent') }}
                       </div>
+                    @elseif(Session::has('error'))
+                      <div class="alert alert-danger alert-dismissable">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ trans(Session::get('error')) }}
+                      </div>
                     @endif
 
                     @form(['route' => 'auth.remind'])
