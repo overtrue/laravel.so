@@ -13,7 +13,7 @@
     "gulp-notify": "2.2.*",
     "gulp-rename": "^1.2.*",
     "gulp-ruby-sass": "^0.4.*",
-    "gulp-sass": "^2.0.3",
+    "gulp-sass": "^2.1.0",
     "gulp-size": "^0.3.*",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^0.2.*",

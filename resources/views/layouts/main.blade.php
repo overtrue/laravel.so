@@ -15,7 +15,7 @@
         <meta property="og:description" content="@yield('description')" />
         <meta name="keywords" content="@yield('keywords', trans('layouts.meta_keywords'))">
         <meta name="description" content="@yield('description')">
-        <meta name="site-title" content="@yield('site-title', trans('layouts.site_title'))">
+        <meta name="title" content="@yield('title', trans('layouts.site_title'))">
         <meta name="author" content="{{ trans('layouts.meta_author') }}">
         <meta name="google-site-verification" content="e2Aj3BCstJLN5LImLRFGVMC0CiDz0FpLL05xDvrOEdw" />
         <meta name="google-site-verification" content="MrFzQBXxCihlrGCRW0UaLkiPk81MqFfxYKlrVnAQK2Q" />

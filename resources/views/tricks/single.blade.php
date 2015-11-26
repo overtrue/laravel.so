@@ -1,7 +1,6 @@
 @extends('layouts.main')
 
-@section('title', $trick->pageTitle)
-@section('site-title', "#Laravel#《{$trick->title}》")
+@section('title', "#Laravel#《{$trick->title}》")
 @section('description', $trick->pageDescription)
 
 @section('scripts')
@@ -43,7 +42,7 @@
                         @include('tricks.delete', ['link' => $trick->deleteLink])
                     @endif
                     <div class="trick-user">
-                        <div class="trick-user-image">
+                        <div class="trick-user-image hidden-xs">
                             <img src="{{ $trick->user->avatar }}" class="user-avatar">
                         </div>
                         <div class="trick-user-data">
@@ -51,6 +50,7 @@
                                 {{ $trick->title }}
                             </h1>
                             <div>
+                                <img src="{{ $trick->user->avatar }}" class="user-line-avatar mini visible-xs-inline-block">
                                 {{ trans('tricks.author') }} <a href="{{ route('user.profile', $trick->user->username) }}">{{ $trick->user->username }}</a> - {{ $trick->timeago }}
                             </div>
                         </div>
