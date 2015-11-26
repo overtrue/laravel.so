@@ -57,13 +57,7 @@
                     </div>
                     <script id="markdown-source" type="text/plain">{!! $trick->content !!}</script>
                     <article id="content"></article>
-                    <div class="sns-share">
-                        <a href="" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
-                        <a href="" class="qq"><i class="icon iconfont icon-qq"></i></a>
-                        <a href="" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
-                        <a href="" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
-                        <a href="" class="douban"><i class="icon iconfont icon-douban"></i></a>
-                    </div>
+                    <div class="share-component"></div>
                 </div>
                 <div class="content-box">
                     <div id="disqus_thread"></div>

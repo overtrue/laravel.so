@@ -25,7 +25,7 @@
         <title> @yield('title') - {{ trim(trans('layouts.site_title')) }} </title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('share.js/share.css') }}">
+        <link rel="stylesheet" href="{{ asset('share.js/dist/css/share.min.css') }}">
         @yield('styles')
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -56,16 +56,11 @@
         <script src="{{ asset('js/vendor/jquery.min.js') }}"></script>
         <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/vendor/jquery.qrcode.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('share.js/share.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('share.js/dist/js/share.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/vendor/pangu.min.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/vendor/html2canvas/html2canvas.js') }}"></script>
         @yield('scripts')
         <script type="text/javascript">
-            $(function(){
-                $('.sns-share').share({
-                    weiboAppendDescription: false,
-                });
-            });
 
             // 有研究显示，打字的时候不喜欢在中文和英文之间加空格的人，感情路都走得很辛苦，有七成的比例会在 34 岁的时候跟自己不爱的人结婚，而其余三成的人最后只能把遗产留给自己的猫。毕竟爱情跟书写都需要适时地留白。与大家共勉之。。。。
             pangu.element_spacing('.trick-card');
