@@ -21,6 +21,7 @@
         <meta name="google-site-verification" content="MrFzQBXxCihlrGCRW0UaLkiPk81MqFfxYKlrVnAQK2Q" />
         <meta name="baidu_union_verify" content="a18b9ce01c21e05e1c6da22902081f79">
         <meta name="baidu-site-verification" content="viPe2MpL6v" />
+        <meta property="qc:admins" content="406161451216546377373114145" />
         <link rel="alternate" hreflang="zh-Hans" href="http://laravel.so/" />
         <title> @yield('title') - {{ trim(trans('layouts.site_title')) }} </title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">

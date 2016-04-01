@@ -1,6 +1,6 @@
 <?php
 
-define('M', 1024 * 1024);
+defined('M') || define('M', 1024 * 1024);
 
 return [
      // 存储目录

@@ -74,6 +74,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-4">
+                @include('ads.sidebar1')
                 <div class="content-box">
                     <h5>{{ trans('tricks.stats') }}</h5>
                     <ul class="nav nav-list push-down list-group trick-stats">
@@ -141,7 +142,7 @@
                         @endif
                     </div>
                 </div>
-                @include('ads.sidebar')
+                @include('ads.sidebar2')
             </div>
         </div>
         {{--<div class="row">
