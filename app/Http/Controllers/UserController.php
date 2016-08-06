@@ -136,7 +136,7 @@ class UserController extends BaseController
     public function getPublic($username)
     {
         $user = $this->users->requireByUsername($username);
-        $tricks = $this->tricks->findAllForUser($user);
+        $tricks = $this->tricks->findAllForUser($user, 9, true);
 
         return view('user.public', compact('user', 'tricks'));
     }
