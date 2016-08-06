@@ -18,6 +18,7 @@ return array(
     'trick_description_placeholder' => 'Give detailed description of the trick',
     'trick_code' => 'Trick code:',
     'save_trick' => 'Save Trick',
+    'is_draft'   => 'Is Draft?',
     'editing_trick' => 'Editing trick',
     'errors_while_editing' => 'There were errors while editing this trick:',
     'errors_while_creating' => 'There were errors while creating this trick:',

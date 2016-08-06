@@ -65,6 +65,17 @@ class Trick extends Model implements HasPresenter
         return $this->belongsToMany(Category::class);
     }
 
+    /**
+     * Filter the draft of tricks.
+     *
+     * @param $query
+     * @return mixed
+     */
+    public function scopeNotDraft($query)
+    {
+        return $query->where('is_draft', 0);
+    }
+
     public function getPresenterClass()
     {
         return TrickPresenter::class;

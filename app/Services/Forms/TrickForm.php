@@ -24,7 +24,7 @@ class TrickForm extends AbstractForm
     public function getInputData()
     {
         return array_only($this->inputData, [
-            'title', 'content', 'tags', 'categories',
+            'title', 'content', 'tags', 'categories', 'is_draft',
         ]);
     }
 }

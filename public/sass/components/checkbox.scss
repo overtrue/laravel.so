@@ -1,0 +1,125 @@
+$input--size: 20px;
+
+$input--color--default: #cfcfcf;
+$input--color--active: #ff8383;
+$input--color--disabled: #efefef;
+
+%checkbox-radio-buttons__label--element {
+
+  label {
+    // Positioning
+    position: relative;
+
+    // Box Model
+    display: block;
+    padding-left: $input--size + 10px;
+  }
+
+}
+
+%checkbox-radio-buttons__label--class {
+  // Typography
+  font-weight: normal;
+  line-height: $input--size;
+
+  &:before {
+    // Positioning
+    position: absolute;
+    left: 0;
+
+    // Box Model
+    float: left;
+    display: inline-block;
+    width: $input--size;
+    height: $input--size;
+
+    // Typography
+    font-size: 10px;
+    line-height: 13px;
+    text-align: center;
+    color: #fff;
+
+    // Visual
+    border: 3px solid $input--color--default;
+
+    // CSS3
+    content: '';
+
+    // Transition
+    transition: all 250ms;
+  }
+
+  &:hover::before {
+    // Visual
+    border-color: $input--color--active;
+  }
+
+}
+
+
+%checkbox-radio-buttons__input--element {
+  // Box Model
+  display: none;
+
+  &:checked + span::before {
+    font-family: 'FontAwesome';
+    content: '\f00c';
+    background-color: $input--color--active;
+    border-color: $input--color--active;
+  }
+
+  &:disabled + span::before {
+    border-color: $input--color--disabled;
+  }
+
+  &:disabled:hover + span {
+    cursor: not-allowed;
+  }
+
+  &:disabled:checked + span::before {
+    background-color: $input--color--disabled;
+  }
+}
+
+%checkbox-radio-buttons__input--first-child {
+  padding-left: 0;
+}
+
+
+
+@each $input--type in checkbox, radio {
+
+  .#{$input--type},
+  .#{$input--type}-inline {
+
+    @extend %checkbox-radio-buttons__label--element;
+
+    .#{$input--type}__label {
+      @extend %checkbox-radio-buttons__label--class;
+
+      @if $input--type == radio {
+        &:before {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    input[type='#{$input--type}'] {
+      @extend %checkbox-radio-buttons__input--element;
+    }
+
+  }
+
+  @if $input--type == checkbox {
+    .#{$input--type}es-inline .#{$input--type}-inline:first-child {
+      @extend %checkbox-radio-buttons__input--first-child;
+    }
+  }
+
+  @if $input--type == radio {
+    .#{$input--type}s-inline .#{$input--type}-inline:first-child {
+      @extend %checkbox-radio-buttons__input--first-child;
+    }
+  }
+
+}

@@ -18,6 +18,7 @@ return array(
     'remove_trick' => '移除',
     'trick_content_placeholder' => '请详细描述您的经验吧！',
     'save_trick' => '保存',
+    'is_draft'   => '草稿？',
     'editing_trick' => '编辑',
     'errors_while_editing' => '更新失败:',
     'errors_while_creating' => '创建失败:',

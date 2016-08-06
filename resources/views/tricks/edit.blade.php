@@ -106,6 +106,14 @@
                             @select('categories[]', $categoryList, $selectedCategories, array('multiple','id'=>'categories','placeholder'=>trans('tricks.categorize_trick_placeholder'),'class' => 'form-control'))
                         </div>
                         <div class="form-group">
+                            <div class="checkbox">
+                                <label>
+                                    @checkbox('is_draft', null, $trick->is_draft, array('id'=>'draft', 'class'=>'form-control'))
+                                    <span class="checkbox__label">{{ trans('tricks.is_draft') }}</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <div class="text-right">
                               <button type="submit"  id="save-section" class="btn btn-primary ladda-button" data-style="expand-right">
                                 {{ trans('tricks.update_trick') }}
