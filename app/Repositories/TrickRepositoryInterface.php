@@ -12,11 +12,10 @@ interface TrickRepositoryInterface
      *
      * @param \User $user
      * @param int   $perPage
-     * @param bool  $showDraft
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findAllForUser(User $user, $perPage = 9, $showDraft = false);
+    public function findAllForUser(User $user, $perPage = 9);
 
     /**
      * Find all tricks that are favorited by the given user paginated.

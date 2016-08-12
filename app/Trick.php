@@ -3,13 +3,14 @@
 namespace App;
 
 use App\Presenters\TrickPresenter;
+use App\Databases\DraftTrick;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
 class Trick extends Model implements HasPresenter
 {
-    use SoftDeletes;
+    use SoftDeletes, DraftTrick;
 
     /**
      * The table associated with the model.
@@ -63,17 +64,6 @@ class Trick extends Model implements HasPresenter
     public function categories()
     {
         return $this->belongsToMany(Category::class);
-    }
-
-    /**
-     * Filter the draft of tricks.
-     *
-     * @param $query
-     * @return mixed
-     */
-    public function scopeNotDraft($query)
-    {
-        return $query->where('is_draft', 0);
     }
 
     public function getPresenterClass()
