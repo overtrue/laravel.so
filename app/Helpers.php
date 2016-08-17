@@ -9,7 +9,7 @@
  */
 function admin_url($uri)
 {
-    return url('admin/'.$uri);
+    return url('dashboard/'.$uri);
 }
 
 function admin_view($name)

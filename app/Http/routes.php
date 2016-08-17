@@ -99,6 +99,7 @@ Route::group($admin, function () {
     Route::controller('auth', 'AuthController');
     Route::resources([
             '/' => 'HomeController',
+            'tricks'=> 'TrickController',
             'links' => 'LinkController',
         ]);
 
