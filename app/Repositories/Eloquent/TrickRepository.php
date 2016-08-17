@@ -408,4 +408,15 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     {
         return new TrickEditForm($id);
     }
+
+    /**
+     * Delete the trick by id.
+     *
+     * @param $id
+     * @return int
+     */
+    public function delete($id)
+    {
+        return $this->model->destroy($id);
+    }
 }
