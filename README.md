@@ -41,6 +41,30 @@ http://laravel.so
 
 用户名：`admin` 密码：`password`
 
+# Vue 例子
+
+1. 在项目根目录, 安装依赖
+
+  ```
+  npm install --no-bin-links
+  ```
+
+1. 资源文件编译及合并
+
+  ```
+  gulp
+  ```
+
+1. 设置路由 `app/Http/routes.php`
+
+  ```
+  Route::get('example/{vue_capture?}', function () {
+    return view('example');
+  });
+  ```
+
+访问 [http://site.app/example]()
+
 # License
 
 MIT
