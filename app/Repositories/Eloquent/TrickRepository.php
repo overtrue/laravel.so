@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Eloquent;
 
+use Auth;
 use Disqus;
 use App\Tag;
 use App\User;
@@ -52,17 +53,19 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      *
      * @param \App\User $user
      * @param int       $perPage
-     * @param boolean   $showDraft
      *
      * @return \Illuminate\Pagination\LengthAwarePaginator|\App\Trick[]
      */
-    public function findAllForUser(User $user, $perPage = self::PAGE_SIZE, $showDraft = false)
+    public function findAllForUser(User $user, $perPage = self::PAGE_SIZE)
     {
-        $tricks = $user->tricks();
+        $trick = $this->model;
 
-        if($showDraft) $tricks->notDraft();
+        if(isset(Auth::user()->id) && Auth::user()->id == $user->id)
+            $trick = $trick->withDrafted();
 
-        return $tricks->orderBy('created_at', 'DESC')->paginate($perPage);
+        return $trick->where('user_id', $user->id)
+                     ->orderBy('created_at', 'DESC')
+                     ->paginate($perPage);
     }
 
     /**
@@ -89,14 +92,12 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     public function findBySlug($slug)
     {
-        return $this->model
-                    ->where(function ($query) {
-                        $query->where('is_draft', 0);
+        $trick = $this->model;
 
-                        if(\Auth::user()) $query->orWhere('user_id', \Auth::user()->id);
-                    })
-                    ->whereSlug($slug)
-                    ->first();
+        if(Auth::user() && $this->isTrickOwnedByUser($slug, Auth::user()->id))
+            $trick = $trick->withDrafted();
+
+        return $trick->whereSlug($slug)->first();
     }
 
     /**
@@ -108,7 +109,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     public function findAllPaginated($perPage = self::PAGE_SIZE)
     {
-        $tricks = $this->model->notDraft()->orderBy('created_at', 'DESC')->paginate($perPage);
+        $tricks = $this->model->orderBy('created_at', 'DESC')->paginate($perPage);
 
         return $tricks;
     }
@@ -134,7 +135,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     public function findMostCommented($perPage = self::PAGE_SIZE)
     {
-        $tricks = $this->model->notDraft()->orderBy('created_at', 'desc')->get();
+        $tricks = $this->model->orderBy('created_at', 'desc')->get();
 
         $tricks = Disqus::appendCommentCounts($tricks);
 
@@ -160,7 +161,6 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     public function findMostPopular($per_page = self::PAGE_SIZE)
     {
         return $this->model
-                    ->notDraft()
                     ->orderByRaw('(tricks.vote_cache * 5 + tricks.view_cache) DESC')
                     ->paginate($per_page);
     }
@@ -172,7 +172,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     public function findForFeed()
     {
-        return $this->model->notDraft()->orderBy('created_at', 'desc')->limit(15)->get();
+        return $this->model->orderBy('created_at', 'desc')->limit(15)->get();
     }
 
     /**
@@ -201,7 +201,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
             throw new CategoryNotFoundException('The category "'.$slug.'" does not exist!');
         }
 
-        $tricks = $category->tricks()->notDraft()->orderBy('created_at', 'DESC')->paginate($perPage);
+        $tricks = $category->tricks()->orderBy('created_at', 'DESC')->paginate($perPage);
 
         return [$category, $tricks];
     }
@@ -217,7 +217,6 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     public function searchByTermPaginated($term, $perPage = self::PAGE_SIZE)
     {
         $tricks = $this->model
-                        ->notDraft()
                         ->Where('title', 'LIKE', '%'.$term.'%')
                         ->orWhere('content', 'LIKE', '%'.$term.'%')
                         ->orWhereHas('tags', function ($query) use ($term) {
@@ -338,7 +337,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
             throw new TagNotFoundException('The tag "'.$slug.'" does not exist!');
         }
 
-        $tricks = $tag->tricks()->notDraft()->orderBy('created_at', 'desc')->paginate($perPage);
+        $tricks = $tag->tricks()->orderBy('created_at', 'desc')->paginate($perPage);
 
         return [$tag, $tricks];
     }
@@ -387,7 +386,7 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
      */
     public function isTrickOwnedByUser($slug, $userId)
     {
-        return $this->model->whereSlug($slug)->whereUserId($userId)->exists();
+        return $this->model->withDrafted()->whereSlug($slug)->whereUserId($userId)->exists();
     }
 
     /**
@@ -408,5 +407,16 @@ class TrickRepository extends AbstractRepository implements TrickRepositoryInter
     public function getEditForm($id)
     {
         return new TrickEditForm($id);
+    }
+
+    /**
+     * Delete the trick by id.
+     *
+     * @param $id
+     * @return int
+     */
+    public function delete($id)
+    {
+        return $this->model->destroy($id);
     }
 }

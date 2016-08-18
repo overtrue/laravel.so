@@ -7,16 +7,12 @@ return [
                 'uri' => '/',
             ],
             [
-                'label' => '内容',
+                'label' => '技巧',
                 'icon' => 'ion-ios-paper-outline',
                 'submenus' => [
                     [
-                        'label' => '所有内容',
-                        'uri' => '',
-                    ],
-                    [
-                        'label' => '新增内容',
-                        'uri' => '',
+                        'label' => '所有技巧',
+                        'uri' => 'tricks',
                     ],
                 ],
             ],

@@ -23,27 +23,27 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="keywords" content="overtrue,bootstrap, bootstrap theme" />
   <meta name="description" content="a bootstrap theme made by overtrue." />
-  <link rel="stylesheet" href="{{ asset('/css/bootstrap.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ asset('/css/style.css') }}" media="screen">
   <link rel="stylesheet" href="{{ asset('/css/ionicons.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/switchery/dist/switchery.min.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/sweetalert/lib/sweet-alert.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/magnific-popup/dist/magnific-popup.css') }}" media="screen">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/select2/dist/css/select2.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('/js/plugins/select2/dist/css/select2-bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/switchery/dist/switchery.min.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/sweetalert/lib/sweet-alert.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/magnific-popup/dist/magnific-popup.css') }}" media="screen">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/select2/dist/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('/js/vendor/select2/dist/css/select2-bootstrap.css') }}">
   <link rel="stylesheet" href="{{ asset('/css/app.css') }}" media="screen">
   @yield('css')
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="{{ asset('/plugin/html5shiv/dist/html5shiv.js') }}"></script>
-  <script src="{{ asset('/plugin/respond/dest/respond.min.js') }}></script>
+  <script src="{{ asset('js/vendor/html5shiv/dist/html5shiv.js') }}"></script>
+  <script src="{{ asset('js/vendor/respond/dest/respond.min.js') }}></script>
   <![endif]-->
   <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-  <script src="{{ asset('/js/underscore-min.js') }}"></script>
-  <script src="{{ asset('/js/underscore.string.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/underscore-min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/underscore.string.min.js') }}"></script>
   <script src="{{ asset('/js/admin/util.js') }}"></script>
-  <script src="{{ asset('/js/plugins/validator.js/i18n/zh_CN.js') }}"></script>
-  <script src="{{ asset('/js/plugins/validator.js/lib/validator.js') }}"></script>
+  <script src="{{ asset('/js/vendor/validator.js/i18n/zh_CN.js') }}"></script>
+  <script src="{{ asset('/js/vendor/validator.js/lib/validator.js') }}"></script>
 </head>
 <body>
   <header class="console-header">
@@ -112,15 +112,15 @@
   <div class="loading text-center" style="display:none">
       <div class="plus-loader">Loading...</div>
   </div>
-  <script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/sweetalert/lib/sweet-alert.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/switchery/dist/switchery.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/bootstrap-select/dist/js/i18n/defaults-zh_CN.js') }}"></script>
-  <script src="{{ asset('/js/plugins/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/select2/dist/js/select2.min.js') }}"></script>
-  <script src="{{ asset('/js/plugins/select2/dist/js/i18n/zh-CN.js') }}"></script>
-  <script src="{{ asset('/js/sweetalert.util.js') }}"></script>
+  <script src="{{ asset('/js/vendor/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/sweetalert/lib/sweet-alert.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/switchery/dist/switchery.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/bootstrap-select/dist/js/i18n/defaults-zh_CN.js') }}"></script>
+  <script src="{{ asset('/js/vendor/magnific-popup/dist/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/select2/dist/js/select2.min.js') }}"></script>
+  <script src="{{ asset('/js/vendor/select2/dist/js/i18n/zh-CN.js') }}"></script>
+  <script src="{{ asset('/js/vendor/sweetalert.util.js') }}"></script>
   <script src="{{ asset('/js/admin/app.js') }}"></script>
   @yield('js')
 </body>
