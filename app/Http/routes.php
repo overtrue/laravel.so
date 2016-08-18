@@ -18,6 +18,29 @@ Route::when('*', 'trick.view_throttle');
 Route::pattern('tag_slug', '[a-z0-9\-]+');
 Route::pattern('trick_slug', '[a-z0-9\-]+');
 
+/*
+ * Admin
+ */
+$admin = [
+            'prefix' => 'dashboard',
+            'namespace' => 'Admin',
+            'middleware' => 'admin',
+         ];
+
+Route::group($admin, function () {
+    Route::controller('auth', 'AuthController');
+    Route::resources([
+            '/' => 'HomeController',
+            'tricks'=> 'TrickController',
+            'links' => 'LinkController',
+        ]);
+
+    Route::controller('users', 'UserController');
+    Route::controller('settings', 'SettingController');
+    Route::any('upload/ueditor', 'UploadController@ueditor');
+    Route::post('upload/image', 'UploadController@postImage');
+});
+
 # Home routes
 Route::get('/', ['as' => 'browse.recent', 'uses' => 'BrowseController@getBrowseRecent']);
 Route::get('popular', ['as' => 'browse.popular', 'uses' => 'BrowseController@getBrowsePopular']);
@@ -86,25 +109,3 @@ Route::get('feed.xml', ['as' => 'feed.rss', 'uses' => 'FeedsController@getRss'])
 # (if we want people to see who favorites and who posts what)
 Route::get('{user}', ['as' => 'user.profile', 'uses' => 'UserController@getPublic']);
 
-/*
- * Admin
- */
-$admin = [
-            'prefix' => 'dashboard',
-            'namespace' => 'Admin',
-            'middleware' => 'admin',
-         ];
-
-Route::group($admin, function () {
-    Route::controller('auth', 'AuthController');
-    Route::resources([
-            '/' => 'HomeController',
-            'tricks'=> 'TrickController',
-            'links' => 'LinkController',
-        ]);
-
-    Route::controller('users', 'UserController');
-    Route::controller('settings', 'SettingController');
-    Route::any('upload/ueditor', 'UploadController@ueditor');
-    Route::post('upload/image', 'UploadController@postImage');
-});

@@ -38,23 +38,23 @@ class AuthController extends Controller
     public function postLogin(Request $request)
     {
         $attributes = [
-            'name' => '用户名',
+            'username' => '用户名',
             'password' => '密码',
                       ];
 
         $this->validate($request, [
-            'name' => 'required|min:5',
+            'username' => 'required|min:5',
         'password' => 'required',
                                   ], [], $attributes);
 
-        $credentials = $request->only('name', 'password');
+        $credentials = $request->only('username', 'password');
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
             return redirect($request->get('redirect', admin_url('/')));
         }
 
         return redirect()->back()->withInput($request->except('password'))->withErrors([
-                'name' => '用户名或密码错误！',
+                'username' => '用户名或密码错误！',
                                                                                                ]);
     }
 

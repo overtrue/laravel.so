@@ -11,7 +11,7 @@
         <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1"><i class="ion-ios-person"></i></span>
-                <input type="name" class="form-control" name="name" id="name" value="{{ old('name') }}" placeholder="用户名">
+                <input type="text" class="form-control" name="username" id="name" value="{{ old('username') }}" placeholder="用户名">
             </div>
           </div>
           <div class="form-group">
