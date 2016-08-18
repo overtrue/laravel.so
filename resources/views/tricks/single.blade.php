@@ -19,7 +19,7 @@
           smartLists: true,
           smartypants: false
         });
-        $('#content').html(marked($('#markdown-source').html()));
+        $('#content').html(marked($('<textarea />').html($('#markdown-source').html()).text()));
     })(jQuery);
     </script>
     @if(Auth::check())
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                     </div>
-                    <script id="markdown-source" type="text/plain">{!! $trick->content !!}</script>
+                    <script id="markdown-source" type="text/plain">{{ $trick->content }}</script>
                     <article id="content"></article>
                     <div class="share-component"></div>
                 </div>
